@@ -57,63 +57,25 @@
      
     </ion-button>
    </div>
-   <div class="grid grid-cols-3 gap-4 mt-4">
-    <div class="text-center" (click)="goToDetails()">
+   <div  *ngIf="products && products.length > 0" class="grid grid-cols-3 gap-4 mt-4">
+    <div class="text-center" (click)="goToDetails()"
+    *ngFor="let product of products"
+     >
       
-     <img alt="Clothing category image" class="w-full rounded-lg" height="100" src="https://storage.googleapis.com/a1aa/image/04KMsF1aBK7IGN2IE9AzsZ6sVyadyt5MJOD4bUcLAOcJIQeJA.jpg" width="100"/>
+     <img 
+     [src]="product.image" alt="{{ product.title }}"
+      class="w-full rounded-lg" 
+      height="100" 
+      width="100"/>
      <p class="mt-2">
-      Clothing
+      {{ product.title }}
      </p>
-     <p class="text-gray-500">
-      109
+     <p class="text-gray-500" (click)="addToCart(product)">
+      ${{ product.price }}
      </p>
    
     </div>
-    <div class="text-center">
-     <img alt="Clothing category image" class="w-full rounded-lg" height="100" src="https://storage.googleapis.com/a1aa/image/04KMsF1aBK7IGN2IE9AzsZ6sVyadyt5MJOD4bUcLAOcJIQeJA.jpg" width="100"/>
-     <p class="mt-2">
-      Clothing
-     </p>
-     <p class="text-gray-500">
-      109
-     </p>
-    </div>
-    <div class="text-center">
-     <img alt="Shoes category image" class="w-full rounded-lg" height="100" src="https://storage.googleapis.com/a1aa/image/UGMNISuwftxnFaIAcer1Rmtiz3cS1EuAaEcSiZtcEq3jgA5TA.jpg" width="100"/>
-     <p class="mt-2">
-      Shoes
-     </p>
-     <p class="text-gray-500">
-      530
-     </p>
-    </div>
-    <div class="text-center">
-     <img alt="Shoes category image" class="w-full rounded-lg" height="100" src="https://storage.googleapis.com/a1aa/image/UGMNISuwftxnFaIAcer1Rmtiz3cS1EuAaEcSiZtcEq3jgA5TA.jpg" width="100"/>
-     <p class="mt-2">
-      Shoes
-     </p>
-     <p class="text-gray-500">
-      530
-     </p>
-    </div>
-    <div class="text-center">
-     <img alt="Clothing category image" class="w-full rounded-lg" height="100" src="https://storage.googleapis.com/a1aa/image/04KMsF1aBK7IGN2IE9AzsZ6sVyadyt5MJOD4bUcLAOcJIQeJA.jpg" width="100"/>
-     <p class="mt-2">
-      Clothing
-     </p>
-     <p class="text-gray-500">
-      109
-     </p>
-    </div>
-    <div class="text-center">
-     <img alt="Clothing category image" class="w-full rounded-lg" height="100" src="https://storage.googleapis.com/a1aa/image/04KMsF1aBK7IGN2IE9AzsZ6sVyadyt5MJOD4bUcLAOcJIQeJA.jpg" width="100"/>
-     <p class="mt-2">
-      Clothing
-     </p>
-     <p class="text-gray-500">
-      109
-     </p>
-    </div>
+    
    </div>
   </div>
  </ion-content>

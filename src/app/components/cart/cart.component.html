@@ -1,0 +1,89 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>Back</ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-lg">Fashion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="p-3">
+    <div class="max-w-lg mx-auto bg-white p-1  ">
+      <div class="flex items-center justify-between mb-4">
+       <h1 class="text-2xl font-bold">
+        Cart
+        <span class="bg-blue-500 text-white rounded-full px-2 py-1 text-sm">
+         2
+        </span>
+       </h1>
+      </div>
+      <div class="bg-gray-100 p-4 rounded-lg mb-4">
+       <div class="flex items-center justify-between">
+        <div>
+         <p class="font-bold">
+          Shipping Address
+         </p>
+         <p class="text-sm">
+          26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city
+         </p>
+        </div>
+        <button class="text-blue-500">
+         <i class="fas fa-pen">
+         </i>
+        </button>
+       </div>
+      </div>
+      <div class="space-y-4"  >
+       <div  *ngFor="let item of cartItems()" class="flex items-center justify-between bg-white p-1 rounded-lg shadow">
+        <img alt="Product image" class="w-16 h-16 rounded-lg" height="60" 
+        [src]="item.image" alt="{{ item.title }}"
+         width="60"/>
+        <div class="flex-1 mx-4">
+         <p class="text-sm">
+          {{ item.title }}
+         </p>
+         <p class="text-sm text-gray-500">
+          Pink, Size M
+         </p>
+         <p class="font-bold">
+          ${{ item.price }}
+         </p>
+        </div>
+       
+        <div class="flex items-center space-x-2">
+         <button class="text-red-500">
+          <i class="fas fa-trash">
+          </i>
+         </button>
+         <div class="flex items-center border rounded-lg">
+          <button class="px-2 py-1 text-blue-500" (click)="removeItem(item.id)">
+           <i class="fas fa-minus" >
+           </i>
+          </button>
+          <span class="px-2 py-1">
+            {{ item.quantity }}
+          </span>
+          <button class="px-2 py-1 text-blue-500">
+           <i class="fas fa-plus">
+           </i>
+          </button>
+         </div>
+        </div>
+        <ion-button (click)="addItem(item.id)">Add</ion-button>
+        <ion-button (click)="removeItem(item.id)">Remove</ion-button>
+       </div>
+      
+      </div>
+       
+      <div class="flex items-center justify-between mt-6">
+       <p class="text-lg font-bold">
+        Total {{ totalPrice() | currency }}
+       </p>
+       <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">
+        Checkout
+       </button>
+      </div>
+     </div>
+  </div>
+</ion-content>

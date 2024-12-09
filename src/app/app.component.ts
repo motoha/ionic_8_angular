@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
  
 import { HttpClient } from '@angular/common/http';
+import { CartService } from './services/cart.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -13,5 +14,7 @@ import { HttpClient } from '@angular/common/http';
   providers: [HttpClient]
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private cartService: CartService) {
+    console.log('Current cart:', this.cartService.cart());
+  }
 }

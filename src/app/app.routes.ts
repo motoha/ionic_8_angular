@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from './components/category/category.component';
 import { ProductComponent } from './components/product/product.component';
+import { CartComponent } from './components/cart/cart.component';
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -36,6 +37,7 @@ export const routes: Routes = [
   { path: 'home', component: HomePage, canActivate: [AuthGuard] },
   { path: 'category', component: CategoryComponent, canActivate: [AuthGuard] },
   { path: 'detail', component: ProductComponent , canActivate: [AuthGuard] },
+  { path: 'cart', component: CartComponent , canActivate: [AuthGuard] },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 

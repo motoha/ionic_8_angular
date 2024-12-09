@@ -5,6 +5,7 @@ import { provideHttpClient } from '@angular/common/http';
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
+import { CartService } from './app/services/cart.service';
 // import {  AngularSvgIconModule } from 'angular-svg-icon';
 
 bootstrapApplication(AppComponent, {
@@ -13,6 +14,11 @@ bootstrapApplication(AppComponent, {
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideHttpClient(),
-    // AngularSvgIconModule
+    {
+      provide: 'APP_INITIALIZER',
+      useFactory: (cartService: CartService) => () => cartService.loadCartFromStorage(),
+      deps: [CartService],
+      multi: true,
+    },
   ],
 });

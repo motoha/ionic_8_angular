@@ -10,10 +10,10 @@
 
 <ion-content>
  <div>
-  <div class="bg-white rounded-lg shadow-lg max-w-sm">
+  <div class="bg-white rounded-lg shadow-lg max-w-sm ">
     <img alt="Woman holding shopping bags" class="w-full rounded-t-lg" height="300" src="https://storage.googleapis.com/a1aa/image/8fKqZBAhcdRRaijLNDZ9dmvT9vUuqS7OUl7wI0Jkk9zSyh8JA.jpg" width="400"/>
     <div class="p-4">
-     <div class="flex justify-between items-center">
+     <div class="flex justify-between items-center p-3">
       <div>
        <span class="text-2xl font-bold">
         $24,00
@@ -69,7 +69,7 @@
       </div>
      </div>
      <div class="flex mt-4">
-      <button class="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg mr-2">
+      <button  (click)="goToDetails()" class="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg mr-2">
        Add to cart
       </button>
       <button class="flex-1 bg-blue-500 text-white py-2 rounded-lg">
