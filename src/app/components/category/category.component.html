@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>Back</ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-lg">Fashion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="p-3">
+    <div class="grid grid-cols-2 sm:grid-cols-2 gap-6">
+    
+        <div (click)="goToDetails()" class="bg-white rounded-lg shadow-md overflow-hidden max-h-40 " click="goToDetails()">
+          <img
+            alt="Woman in a red off-shoulder top and hat"
+            class="w-full max-h-24 object-cover"
+            height="100"
+            src="https://storage.googleapis.com/a1aa/image/KaMM99vtEYo5EFa15lk6cDk9LfiYzfNHql2JvGc81PAwhD5TA.jpg"
+            width="300"
+          />
+          <div class="p-4">
+            <h2 class="text-gray-800 text-sm font-semibold">Lorem ipsum</h2>
+         
+         </div>
+        </div>
+     
+      <div (click)="goToDetails()" class="bg-white rounded-lg shadow-md overflow-hidden max-h-40">
+        <img
+          alt="Woman in a floral top and peach skirt"
+          class="w-full max-h-24 object-cover"
+          height="100"
+          src="https://storage.googleapis.com/a1aa/image/jQn2Jnu3NGJuN1ehbslxSSxCnzs7iRMmXAvfTdRpmFcxhD5TA.jpg"
+          width="300"
+        />
+        <div class="p-4">
+          <h2 class="text-gray-800 text-sm font-semibold">amet consectetur</h2>
+          <p class="text-gray-600 mt-2">$17.00</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-md overflow-hidden max-h-40">
+        <img
+          alt="Woman in a white off-shoulder top holding shopping bags"
+          class="w-full max-h-24 object-cover"
+          height="300"
+          src="https://storage.googleapis.com/a1aa/image/9Z82mjGDO97tP5kRnE3IZPbN7ouZxNIjTLzpzzfWkjfuhD5TA.jpg"
+          width="300"
+        />
+        <div class="p-4">
+          <h2 class="text-gray-800 text-sm font-semibold">
+            t amet consectetur
+          </h2>
+          <p class="text-gray-600 mt-2">$17.00</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-md overflow-hidden max-h-40">
+        <img
+          alt="Woman in a white cardigan"
+          class="w-full max-h-24 object-cover"
+          height="300"
+          src="https://storage.googleapis.com/a1aa/image/kE4yY4LdlIqeHiaCE8FIgydjOOtW3jRHig3AFBvbUl83wh8JA.jpg"
+          width="300"
+        />
+        <div class="p-4">
+          <h2 class="text-gray-800 text-sm font-semibold">consectetur</h2>
+          <p class="text-gray-600 mt-2">$17.00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

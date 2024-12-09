@@ -1,0 +1,24 @@
+.neutral-input, .neutral-textarea, .neutral-select, .neutral-button {
+    @apply bg-white border border-gray-300 text-black rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+    /* Remove default Tailwind form element styles */
+    appearance: none;
+    box-shadow: none;
+    padding: 0.5rem;
+    line-height: 1.5;
+  }
+  
+  .neutral-input:focus, .neutral-textarea:focus, .neutral-select:focus {
+    @apply ring-0 border-gray-400;
+  }
+  
+  .neutral-label {
+    @apply mb-2 block text-sm font-medium text-gray-700;
+  }
+  
+  .neutral-form {
+    @apply space-y-4;
+  }
+  
+  .neutral-button {
+    @apply bg-gray-100 text-gray-700 border border-gray-300 rounded-md px-4 py-2 cursor-pointer hover:bg-gray-200;
+  }
